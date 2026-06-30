@@ -93,9 +93,15 @@ margin-bottom:35px;
 
 #weatherIcon{
 
-font-size:70px;
-
 margin-bottom:15px;
+
+}
+
+#weatherIcon img{
+
+width:90px;
+
+height:90px;
 
 }
 
