@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard | Login</title>
 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <div class="login-container">
+    <div class="login-container glass-panel">
 
         <h1>🌤 Weather Dashboard</h1>
 
@@ -18,39 +20,43 @@
             Login to continue
         </p>
 
+        <!-- Inline error notification -->
+        <div id="errorNotification" class="notification hidden"></div>
+
         <form id="loginForm">
 
-            <label for="username">
-                Username
-            </label>
+            <div class="input-group">
+                <label for="username">
+                    Username
+                </label>
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Enter Username"
+                    required
+                >
+            </div>
 
-            <input
-                type="text"
-                id="username"
-                placeholder="Enter Username"
-                required
-            >
-
-            <label for="password">
-                Password
-            </label>
-
-            <input
-                type="password"
-                id="password"
-                placeholder="Enter Password"
-                required
-            >
+            <div class="input-group">
+                <label for="password">
+                    Password
+                </label>
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter Password"
+                    required
+                >
+            </div>
 
             <button type="submit" id="loginBtn">
                 Login
             </button>
 
-            <p id="error"></p>
-
         </form>
 
     </div>
+    
     <script src="js/login.js"></script>
 
 </body>

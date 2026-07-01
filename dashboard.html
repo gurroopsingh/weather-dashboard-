@@ -1,164 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
-
-    <link rel="stylesheet"
-          href="css/dashboard.css">
-
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/dashboard.css">
 </head>
 
-<body>
+<body class="default-bg">
+    <header>
+        <h1>Weather Dashboard</h1>
+        <button id="logoutBtn" class="logout-btn">Logout</button>
+    </header>
 
-<header>
+    <main>
+        <div id="notification" class="notification hidden"></div>
+        
+        <section class="search-section">
+            <div class="search-wrapper">
+                <input type="text" id="searchInput" placeholder="Enter City Name...">
+                <button id="searchBtn">Search</button>
+            </div>
+        </section>
 
-    <h1>Weather Dashboard</h1>
-
-</header>
-
-<main>
-
-<section class="search-section">
-
-    <input
-        type="text"
-        id="searchInput"
-        placeholder="Enter City Name">
-
-    <button id="searchBtn">
-
-        Search
-
-    </button>
-
-</section>
-
-<section class="weather-card">
-
-    <div id="weatherIcon">
-
-        🌤
-
-    </div>
-
-    <h2 id="temperature">
-
-        --°C
-
-    </h2>
-
-    <h3 id="cityName">
-
-        Search a city
-
-    </h3>
-
-    <p id="condition">
-
-        Weather Condition
-
-    </p>
-
-    <div class="weather-details">
-
-        <div>
-
-            <h4>Humidity</h4>
-
-            <p id="humidity">
-
-                --
-
-            </p>
-
+        <!-- Loading spinner -->
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Fetching weather data...</p>
         </div>
 
-        <div>
+        <!-- Weather Display (Hidden initially until searched) -->
+        <div id="weatherDisplay" class="hidden">
+            <section class="weather-card glass-panel">
+                <div class="current-weather-main">
+                    <div id="weatherIcon" class="icon-container">
+                        🌤
+                    </div>
+                    <div class="temp-container">
+                        <h2 id="temperature">--°C</h2>
+                        <h3 id="cityName">Search a city</h3>
+                        <p id="condition">Weather Condition</p>
+                    </div>
+                </div>
 
-            <h4>Wind</h4>
+                <div class="weather-details">
+                    <div class="detail-box">
+                        <span class="detail-icon">💧</span>
+                        <h4>Humidity</h4>
+                        <p id="humidity">--</p>
+                    </div>
+                    <div class="detail-box">
+                        <span class="detail-icon">💨</span>
+                        <h4>Wind</h4>
+                        <p id="wind">--</p>
+                    </div>
+                    <div class="detail-box">
+                        <span class="detail-icon">🌡️</span>
+                        <h4>Feels Like</h4>
+                        <p id="feelsLike">--</p>
+                    </div>
+                </div>
+            </section>
 
-            <p id="wind">
-
-                --
-
-            </p>
-
+            <section class="forecast-section">
+                <h2 class="forecast-title">3-Day Forecast</h2>
+                <div class="forecast-container" id="forecastContainer">
+                    <!-- Forecast cards will be injected here by JS -->
+                </div>
+            </section>
         </div>
+    </main>
 
-        <div>
-
-            <h4>Feels Like</h4>
-
-            <p id="feelsLike">
-
-                --
-
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-<section>
-
-<h2 class="forecast-title">
-
-    3-Day Forecast
-
-</h2>
-
-<div
-class="forecast-container"
-
-id="forecastContainer">
-
-<div class="forecast-card">
-
-<h3>Day 1</h3>
-
-<p>--°C</p>
-
-<p>---</p>
-
-</div>
-
-<div class="forecast-card">
-
-<h3>Day 2</h3>
-
-<p>--°C</p>
-
-<p>---</p>
-
-</div>
-
-<div class="forecast-card">
-
-<h3>Day 3</h3>
-
-<p>--°C</p>
-
-<p>---</p>
-
-</div>
-
-</div>
-
-</section>
-
-</main>
-
-<script src="js/dashboard.js"></script>
-
+    <script src="js/dashboard.js"></script>
 </body>
-
 </html>
